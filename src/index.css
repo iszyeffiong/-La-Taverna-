@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-portun-bg: #0a0a0a;
+  --color-portun-card: #1a1a1a;
+  --color-portun-accent: #d4af37;
+  --color-portun-accent-dim: #b8962d;
+  --color-portun-text: #ffffff;
+  --color-portun-text-muted: rgba(255, 255, 255, 0.7);
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Roboto", sans-serif;
+}
+
+@layer base {
+  html {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  html::-webkit-scrollbar, .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+
+  /* Utility to hide scrollbar for any element */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  body {
+    @apply bg-portun-bg text-portun-text font-sans selection:bg-portun-accent selection:text-portun-bg;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-portun-accent hover:bg-portun-accent-dim text-portun-bg font-bold py-3 px-8 transition-all duration-300 uppercase tracking-widest text-sm inline-flex items-center gap-2;
+  }
+
+  .btn-outline {
+    @apply border border-portun-text hover:bg-portun-text hover:text-portun-bg font-bold py-3 px-8 transition-all duration-300 uppercase tracking-widest text-sm inline-flex items-center gap-2;
+  }
+
+  .glass-card {
+    @apply bg-portun-card/50 backdrop-blur-md border border-white/10;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-6xl text-center mb-16;
+  }
+  
+  .section-title span {
+      @apply text-portun-accent font-serif italic;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
