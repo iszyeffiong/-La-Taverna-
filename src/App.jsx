@@ -9,7 +9,7 @@ import { translations } from './translations';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [lang, setLang] = useState('EN');
+  const [lang, setLang] = useState('IT');
 
   const t = translations[lang];
 
