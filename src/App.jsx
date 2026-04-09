@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Menu from './components/Menu';
 import Footer from './components/Footer';
+import SaleBanner from './components/SaleBanner';
 import ReservationModal from './components/Reservation';
 import { translations } from './translations';
 
@@ -52,6 +53,7 @@ function App() {
         </section>
       </main>
       <Footer t={t.footer} />
+      <SaleBanner />
 
       {/* Global Modal */}
       <ReservationModal 
